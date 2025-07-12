@@ -1,6 +1,6 @@
-# SergipePay 💸
+# SergipePay
 
-### Status do Projeto: Finalizado ✔️
+
 
 **SergipePay** é uma API RESTful que simula o backend de uma conta digital simples, desenvolvida como um projeto de portfólio para demonstrar habilidades em desenvolvimento backend com Java e o ecossistema Spring. O projeto abrange desde a criação e validação de clientes até a lógica de transações financeiras e testes unitários.
 
@@ -89,9 +89,9 @@ Com a aplicação em execução, você pode acessar:
 -----
 
 
-
-
 ## 📑 Endpoints da API
+
+<img width="1434" height="425" alt="Image" src="https://github.com/user-attachments/assets/157b3a98-e154-484e-8bf8-8c28e67943e1" />
 
 Aqui está uma lista dos principais endpoints disponíveis:
 
