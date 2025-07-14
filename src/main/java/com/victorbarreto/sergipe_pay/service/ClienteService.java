@@ -43,8 +43,6 @@ public class ClienteService {
         clienteModel.setNome(clienteDTO.nome());
         clienteModel.setCpf(clienteDTO.cpf());
         clienteModel.setEmail(clienteDTO.email());
-        clienteModel.setSenha(clienteDTO.senha());
-
 
         ContaModel contaModel = new ContaModel();
         contaModel.setNumConta(gerarNumConta());

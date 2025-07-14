@@ -1,6 +1,10 @@
 package com.victorbarreto.sergipe_pay.entity;
 
-import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -13,7 +17,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_clientes")
-public class ClienteModel implements Serializable {
+public class ClienteModel implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -87,5 +91,21 @@ public class ClienteModel implements Serializable {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of();
+    }
+
+    @Override
+    public String getPassword() {
+        return senha;
+    }
+
+    @Override
+    public String getUsername() {
+        return email;
     }
 }
