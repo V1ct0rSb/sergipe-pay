@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.victorbarreto.sergipe_pay.exception.ContaSaldoInsuficiennteException;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -103,7 +105,7 @@ public class ContaModel {
             this.saldo = this.saldo.subtract(valor);
 
         } else {
-            throw new RuntimeException("Saldo Insuficiente");
+            throw new ContaSaldoInsuficiennteException("Saldo menor que o valor informado para saque!");
         }
         return this.saldo;
     }

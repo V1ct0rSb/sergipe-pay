@@ -10,6 +10,7 @@ import com.victorbarreto.sergipe_pay.dto.ClienteDTO;
 import com.victorbarreto.sergipe_pay.dto.ContaResponseDTO;
 import com.victorbarreto.sergipe_pay.entity.ClienteModel;
 import com.victorbarreto.sergipe_pay.entity.ContaModel;
+import com.victorbarreto.sergipe_pay.exception.ClienteJaCadastradoException;
 import com.victorbarreto.sergipe_pay.repository.ClienteRespository;
 import com.victorbarreto.sergipe_pay.repository.ContaRepository;
 
@@ -28,11 +29,11 @@ public class ClienteService {
     public ContaResponseDTO criarConta(ClienteDTO clienteDTO) {
 
         if (clienteRespository.existsByCpf(clienteDTO.cpf())) {
-            throw new RuntimeException("Cpf informado já cadastrado!");
+            throw new ClienteJaCadastradoException("CPF informado já se encontra cadastrado no sistema.");
 
         }
         if (clienteRespository.existsByEmail(clienteDTO.email())) {
-            throw new RuntimeException("Email informado já cadastrado!");
+            throw new ClienteJaCadastradoException("E-mail informado já se encontra cadastrado no sistema.");
         }
 
         ClienteModel clienteModel = new ClienteModel();
